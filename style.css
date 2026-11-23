@@ -1,4 +1,3 @@
-
 /* =========================================
    SILK & SUNDAY INTIMATES
    PREMIUM WEBSITE DESIGN
@@ -1225,4 +1224,176 @@ section {
   background: var(--gold);
 }
 
-/* TABL
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .why-section {
+    padding: 85px 0;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .why-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .why-section {
+    padding: 70px 0;
+  }
+
+  .why-section .section-heading {
+    margin-bottom: 40px;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .why-card,
+  .why-card:last-child {
+    grid-column: auto;
+  }
+
+  .why-card {
+    padding: 35px 28px;
+  }
+
+  .why-number {
+    margin-bottom: 20px;
+  }
+
+  .why-icon {
+    margin-bottom: 20px;
+  }
+
+  .why-statement {
+    gap: 12px;
+    margin-top: 55px;
+  }
+
+  .statement-line {
+    width: 20px;
+  }
+
+}
+
+/* =========================================
+   END OF BLOCK 6
+========================================= */
+    
+/* =========================================
+   11 — LUXURY SHOPPING CALL TO ACTION
+========================================= */
+
+.shop-cta-section {
+  position: relative;
+  padding: 120px 20px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at top right,
+      rgba(197,164,119,0.16),
+      transparent 55%
+    ),
+    linear-gradient(
+      135deg,
+      var(--cocoa-dark),
+      var(--cocoa)
+    );
+  color: var(--ivory);
+  text-align: center;
+}
+
+/* DECORATIVE OVERLAY */
+
+.shop-cta-overlay {
+  position: absolute;
+  inset: 22px;
+  border: 1px solid var(--gold-border);
+  pointer-events: none;
+}
+
+.shop-cta-overlay::before,
+.shop-cta-overlay::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-color: var(--gold);
+  border-style: solid;
+}
+
+.shop-cta-overlay::before {
+  top: -1px;
+  left: -1px;
+  border-width: 2px 0 0 2px;
+}
+
+.shop-cta-overlay::after {
+  right: -1px;
+  bottom: -1px;
+  border-width: 0 2px 2px 0;
+}
+
+/* CONTENT */
+
+.shop-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  margin-inline: auto;
+}
+
+.shop-cta-content .section-eyebrow {
+  margin-bottom: 28px;
+  color: var(--gold-light);
+}
+
+/* MAIN HEADING */
+
+.shop-cta-title {
+  margin-bottom: 30px;
+  color: var(--ivory);
+  font-size: clamp(42px, 5.5vw, 78px);
+  letter-spacing: -0.045em;
+}
+
+.shop-cta-title em {
+  display: block;
+  margin-top: 8px;
+  color: var(--gold-light);
+}
+
+/* DESCRIPTION */
+
+.shop-cta-description {
+  max-width: 610px;
+  margin: 0 auto 38px;
+  color: rgba(255,249,242,0.78);
+  font-size: 16px;
+  line-height: 1.95;
+}
+
+/* SHOP BUTTON */
+
+.shop-cta-actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 65px;
+}
+
+.shop-cta-actions .btn-primary {
+  min-width: 230px;
+  background: var(--gold);
+  color: var(--cocoa-dark);
+}
