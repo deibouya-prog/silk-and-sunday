@@ -1,1 +1,1228 @@
 
+/* =========================================
+   SILK & SUNDAY INTIMATES
+   PREMIUM WEBSITE DESIGN
+   DEVELOPED BY GODZYA GROUP
+========================================= */
+
+/* =========================================
+   01 — BRAND COLOUR SYSTEM
+========================================= */
+
+:root {
+
+  /* Primary colours */
+  --cocoa: #49312F;
+  --cocoa-dark: #30201F;
+  --gold: #C5A477;
+  --gold-light: #E5C595;
+
+  /* Background colours */
+  --ivory: #FFF9F2;
+  --cream: #F1E6D8;
+  --white: #FFFFFF;
+
+  /* Typography */
+  --text-dark: #49312F;
+  --text-muted: #796963;
+  --text-light: #FFF9F2;
+
+  /* Borders and effects */
+  --border: rgba(73,49,47,0.12);
+  --gold-border: rgba(197,164,119,0.35);
+
+  /* Fonts */
+  --font-heading: "Playfair Display", serif;
+  --font-body: "DM Sans", sans-serif;
+
+  /* Layout */
+  --container: 1240px;
+  --header-height: 90px;
+
+  /* Transitions */
+  --transition: all 0.35s ease;
+
+}
+
+/* =========================================
+   02 — GLOBAL RESET
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--ivory);
+  color: var(--text-dark);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   03 — TYPOGRAPHY
+========================================= */
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(44px, 6vw, 88px);
+}
+
+h2 {
+  font-size: clamp(34px, 4vw, 58px);
+}
+
+h3 {
+  font-size: clamp(23px, 2.5vw, 32px);
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+em {
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* =========================================
+   04 — CONTAINERS
+========================================= */
+
+.container,
+.nav-container,
+.hero-container {
+  width: min(100% - 40px, var(--container));
+  margin-inline: auto;
+}
+
+section {
+  position: relative;
+}
+
+.section-eyebrow {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.section-title {
+  margin-bottom: 25px;
+  letter-spacing: -0.035em;
+}
+
+.section-description {
+  max-width: 620px;
+  margin-inline: auto;
+  color: var(--text-muted);
+}
+
+.section-heading {
+  max-width: 800px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+/* =========================================
+   05 — BUTTON SYSTEM
+========================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 14px 32px;
+  border: 1px solid transparent;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--cocoa-dark);
+  border-color: var(--gold);
+}
+
+.btn-primary:hover {
+  background: var(--cocoa);
+  color: var(--ivory);
+  border-color: var(--cocoa);
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--cocoa);
+  border-color: var(--gold);
+}
+
+.btn-outline:hover {
+  background: var(--cocoa);
+  color: var(--ivory);
+  border-color: var(--cocoa);
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   06 — PREMIUM NAVIGATION HEADER
+========================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: var(--cocoa);
+  border-bottom: 1px solid var(--gold-border);
+  box-shadow: 0 8px 30px rgba(48,32,31,0.12);
+}
+
+.nav-container {
+  min-height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* BRAND LOGO */
+
+.brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  width: 150px;
+  height: 72px;
+  object-fit: contain;
+}
+
+/* DESKTOP LINKS */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+}
+
+.nav-link {
+  position: relative;
+  padding: 12px 0;
+  color: var(--ivory);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--gold-light);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* SHOP BUTTON */
+
+.nav-shop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 25px;
+  background: var(--gold);
+  color: var(--cocoa-dark);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.nav-shop:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+/* MOBILE MENU BUTTON */
+
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid var(--gold-border);
+}
+
+.menu-toggle span {
+  width: 20px;
+  height: 2px;
+  background: var(--gold-light);
+  transition: var(--transition);
+}
+
+/* TABLET & MOBILE */
+
+@media (max-width: 768px) {
+
+  :root {
+    --header-height: 76px;
+  }
+
+  .nav-container {
+    gap: 12px;
+  }
+
+  .brand-logo {
+    width: 115px;
+    height: 62px;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 18px 25px 25px;
+    background: var(--cocoa-dark);
+    border-bottom: 1px solid var(--gold-border);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  }
+
+  .main-nav.is-open {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--gold-border);
+  }
+
+  .nav-shop {
+    margin-left: auto;
+    min-height: 38px;
+    padding: 9px 15px;
+    font-size: 10px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+}
+
+@media (max-width: 380px) {
+
+  .brand-logo {
+    width: 90px;
+  }
+
+  .nav-shop {
+    padding: 9px 11px;
+    font-size: 9px;
+  }
+
+}
+
+/* =========================================
+   END OF BLOCK 2
+========================================= */
+
+/* =========================================
+   07 — LUXURY HOMEPAGE HERO
+========================================= */
+
+.hero {
+  position: relative;
+  min-height: 740px;
+  padding: 90px 0 110px;
+  overflow: hidden;
+  background: var(--cocoa-dark);
+  color: var(--ivory);
+}
+
+/* SOFT GOLD BACKGROUND GLOW */
+
+.hero-glow {
+  position: absolute;
+  top: -220px;
+  right: -180px;
+  width: 750px;
+  height: 750px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(197,164,119,0.17),
+    transparent 68%
+  );
+  pointer-events: none;
+}
+
+/* HERO LAYOUT */
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+/* HERO CONTENT */
+
+.hero-content {
+  max-width: 620px;
+}
+
+.hero-eyebrow {
+  display: block;
+  margin-bottom: 26px;
+  color: var(--gold-light);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+}
+
+.hero-title {
+  margin-bottom: 30px;
+  color: var(--ivory);
+  letter-spacing: -0.045em;
+}
+
+.hero-title em {
+  display: block;
+  margin-top: 8px;
+  color: var(--gold-light);
+}
+
+.hero-description {
+  max-width: 520px;
+  margin-bottom: 35px;
+  color: rgba(255,249,242,0.78);
+  font-size: 16px;
+  line-height: 1.95;
+}
+
+/* HERO BUTTONS */
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 60px;
+}
+
+.hero .btn-outline {
+  color: var(--ivory);
+  border-color: var(--gold);
+}
+
+.hero .btn-outline:hover {
+  background: var(--gold);
+  color: var(--cocoa-dark);
+}
+
+/* BRAND SIGNATURE */
+
+.hero-signature {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: var(--gold-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+}
+
+.signature-line {
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* HERO IMAGE */
+
+.hero-visual {
+  position: relative;
+  min-width: 0;
+  padding: 25px;
+}
+
+.hero-image-frame {
+  position: relative;
+  z-index: 2;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--gold-border);
+  background: var(--cocoa);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.28);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.hero-image-frame:hover .hero-image {
+  transform: scale(1.045);
+}
+
+/* FLOATING IMAGE LABEL */
+
+.hero-floating-label {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  left: -15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px 30px;
+  background: var(--ivory);
+  color: var(--cocoa);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.hero-floating-label span {
+  color: var(--text-muted);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+}
+
+.hero-floating-label strong {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 500;
+}
+
+/* DECORATIVE CIRCLE */
+
+.hero-decorative-circle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 130px;
+  height: 130px;
+  border: 1px solid var(--gold-border);
+  border-radius: 50%;
+}
+
+/* SCROLL INDICATOR */
+
+.hero-scroll {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transform: translateX(-50%);
+  color: var(--gold-light);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+}
+
+/* RESPONSIVE HERO */
+
+@media (max-width: 900px) {
+
+  .hero {
+    padding: 70px 0 100px;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .hero-content {
+    max-width: 680px;
+  }
+
+  .hero-visual {
+    width: min(100%, 520px);
+    margin-inline: auto;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .hero {
+    padding: 65px 0 100px;
+  }
+
+  .hero-title {
+    font-size: clamp(42px, 11vw, 60px);
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .hero-actions {
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-visual {
+    padding: 12px;
+  }
+
+  .hero-floating-label {
+    left: 0;
+    padding: 15px 20px;
+  }
+
+  .hero-floating-label strong {
+    font-size: 16px;
+  }
+
+  .hero-scroll {
+    bottom: 20px;
+    white-space: nowrap;
+  }
+
+}
+
+/* =========================================
+   END OF BLOCK 3
+========================================= */
+
+
+/* =========================================
+   08 — FEATURED COLLECTIONS
+========================================= */
+
+
+.collections-preview {
+  position: relative;
+  padding: 115px 0 125px;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 248, 240, 0.18),
+      rgba(255, 248, 240, 0.18)
+    ),
+    url("collections-bg.png");
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+/* SECTION INTRODUCTION */
+
+
+
+/* COLLECTION HEADING — SOFT LUXURY */
+
+.collections-preview .section-heading {
+  margin-bottom: 65px;
+  text-align: center;
+}
+
+.collections-preview .section-eyebrow {
+  color: #f0dfcf;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-shadow: 0 1px 4px rgba(50, 30, 25, 0.25);
+}
+
+.collections-preview .section-title {
+  color: #f4e5d7;
+  text-shadow: 0 2px 8px rgba(50, 30, 25, 0.22);
+}
+
+.collections-preview .section-title em {
+  color: #e4bd80;
+  text-shadow: 0 2px 6px rgba(50, 30, 25, 0.18);
+}
+
+.collections-preview .section-description {
+  color: #f1e4d8;
+  font-weight: 400;
+  text-shadow: 0 1px 5px rgba(50, 30, 25, 0.28);
+}
+
+
+
+/* COLLECTION GRID */
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+}
+
+/* COLLECTION CARD */
+
+.collection-card {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--border);
+  transition: transform 0.4s ease,
+              box-shadow 0.4s ease;
+}
+
+.collection-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 65px rgba(73,49,47,0.12);
+}
+
+/* COLLECTION PHOTOGRAPHY */
+
+.collection-image {
+  position: relative;
+  aspect-ratio: 4 / 4.5;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.collection-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.collection-card:hover .collection-image img {
+  transform: scale(1.07);
+}
+
+.collection-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(48,32,31,0.12),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+/* COLLECTION CONTENT */
+
+.collection-info {
+  padding: 32px 30px 35px;
+}
+
+.collection-number {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.collection-info h3 {
+  margin-bottom: 15px;
+  color: var(--cocoa);
+  font-size: clamp(24px, 2.2vw, 31px);
+}
+
+.collection-info p {
+  min-height: 85px;
+  margin-bottom: 25px;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* COLLECTION LINK */
+
+.collection-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--gold);
+  color: var(--cocoa);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.collection-link span {
+  color: var(--gold);
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.collection-link:hover {
+  color: var(--gold);
+}
+
+.collection-link:hover span {
+  transform: translate(3px, -3px);
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .collections-preview {
+    padding: 85px 0;
+  }
+
+  .collection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .collection-info {
+    padding: 26px 24px 30px;
+  }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .collections-preview {
+    padding: 70px 0;
+  }
+
+  .collections-preview .section-heading {
+    margin-bottom: 40px;
+  }
+
+  .collection-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .collection-image {
+    aspect-ratio: 4 / 4;
+  }
+
+  .collection-info p {
+    min-height: 0;
+  }
+
+}
+
+/* =========================================
+   END OF BLOCK 4
+========================================= */
+
+/* =========================================
+   09 — OUR STORY
+========================================= */
+
+.story-section {
+  position: relative;
+  padding: 120px 0;
+  background: var(--cream);
+  overflow: hidden;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 100px;
+}
+
+/* STORY PHOTOGRAPHY */
+
+.story-visual {
+  position: relative;
+  min-width: 0;
+  padding: 20px 20px 45px 0;
+}
+
+.story-image-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--cocoa);
+  box-shadow: 25px 30px 70px rgba(73,49,47,0.16);
+}
+
+.story-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.story-image-frame:hover img {
+  transform: scale(1.04);
+}
+
+.story-image-caption {
+  position: absolute;
+  right: -15px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 23px 35px;
+  background: var(--cocoa);
+  color: var(--gold-light);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  box-shadow: 0 15px 35px rgba(73,49,47,0.15);
+}
+
+/* STORY CONTENT */
+
+.story-content {
+  max-width: 590px;
+}
+
+.story-content .section-title {
+  margin-bottom: 28px;
+  color: var(--cocoa);
+}
+
+.story-content .section-title em {
+  display: block;
+  margin-top: 8px;
+  color: #A78457;
+}
+
+.story-lead {
+  margin-bottom: 25px;
+  font-family: var(--font-heading);
+  font-size: clamp(21px, 2.2vw, 29px);
+  line-height: 1.5;
+  color: var(--cocoa);
+}
+
+.story-content > p:not(.story-lead) {
+  margin-bottom: 20px;
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.95;
+}
+
+/* BRAND VALUES */
+
+.story-values {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 38px;
+  padding: 25px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.story-value {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.value-number {
+  color: #A78457;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.story-value strong {
+  font-family: var(--font-heading);
+  color: var(--cocoa);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* BRAND SIGNATURE */
+
+.story-signature {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 35px;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-style: italic;
+  color: var(--cocoa);
+}
+
+.story-signature strong {
+  color: #A78457;
+  font-weight: 600;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .story-section {
+    padding: 85px 0;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .story-visual {
+    width: min(100%, 550px);
+    margin-inline: auto;
+  }
+
+  .story-content {
+    max-width: 700px;
+  }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .story-section {
+    padding: 70px 0;
+  }
+
+  .story-visual {
+    padding: 0 15px 35px 0;
+  }
+
+  .story-image-caption {
+    right: 0;
+    padding: 17px 22px;
+    font-size: 9px;
+  }
+
+  .story-values {
+    gap: 8px;
+  }
+
+  .story-value strong {
+    font-size: 15px;
+  }
+
+  .story-signature {
+    font-size: 18px;
+  }
+
+}
+
+/* =========================================
+   END OF BLOCK 5
+========================================= */
+
+
+/* =========================================
+   10 — WHY SILK & SUNDAY
+========================================= */
+
+.why-section {
+  position: relative;
+  padding: 115px 0 105px;
+  overflow: hidden;
+  background: var(--cocoa);
+  color: var(--ivory);
+}
+
+/* SECTION HEADING */
+
+.why-section .section-heading {
+  margin-bottom: 65px;
+}
+
+.why-section .section-title {
+  color: var(--ivory);
+}
+
+.why-section .section-title em {
+  color: var(--gold-light);
+}
+
+.why-section .section-description {
+  color: rgba(255,249,242,0.75);
+}
+
+/* THREE VALUE CARDS */
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.why-card {
+  position: relative;
+  padding: 45px 35px 50px;
+  background: rgba(255,255,255,0.035);
+  border: 1px solid var(--gold-border);
+  transition: transform 0.4s ease,
+              background 0.4s ease,
+              border-color 0.4s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  background: rgba(197,164,119,0.09);
+  border-color: var(--gold);
+}
+
+/* CARD NUMBER */
+
+.why-number {
+  display: block;
+  margin-bottom: 32px;
+  color: var(--gold-light);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+/* DECORATIVE ICON */
+
+.why-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  margin-bottom: 30px;
+  border: 1px solid var(--gold-border);
+  border-radius: 50%;
+  color: var(--gold-light);
+  font-size: 30px;
+}
+
+/* CARD TYPOGRAPHY */
+
+.why-card h3 {
+  margin-bottom: 20px;
+  color: var(--ivory);
+  font-size: clamp(23px, 2.2vw, 30px);
+}
+
+.why-card p {
+  color: rgba(255,249,242,0.7);
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+/* BRAND STATEMENT */
+
+.why-statement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 85px;
+  text-align: center;
+}
+
+.why-statement p {
+  font-family: var(--font-heading);
+  color: var(--ivory);
+  font-size: clamp(24px, 3vw, 40px);
+  line-height: 1.5;
+}
+
+.why-statement em {
+  color: var(--gold-light);
+}
+
+.statement-line {
+  width: 65px;
+  height: 1px;
+  flex-shrink: 0;
+  background: var(--gold);
+}
+
+/* TABL
